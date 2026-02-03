@@ -19,7 +19,7 @@ with st.sidebar:
 st.subheader('サイドバーで地域、カテゴリーの選択をし、食中毒と地域ごとの発生回数を知り、比較することができるアプリです')
 st.subheader('食中毒の原因食品と発生地域の表')
 if prefecture == []:
-    df.set_index('地域', inplace=True)
+    df = df.set_index(df.columns[0])
     if prime_category != []:
         df = df[prime_category]
         st.toast('情報が更新されました')
@@ -29,7 +29,7 @@ if prefecture == []:
 else:
     st.toast('情報が更新されました')
     df = df[df[df.columns[0]].isin(prefecture)]
-    df.set_index('地域', inplace=True)
+    df = df.set_index(df.columns[0])
     if prime_category != []:
         df = df[prime_category]
     st.dataframe(df)
