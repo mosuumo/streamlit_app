@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(
+    layout="wide",                
+)
+
 df = pd.read_csv("第1表.csv", header=[0,1],)
 category = df.iloc[0].unique()
 
@@ -13,9 +17,6 @@ with st.sidebar:
     with st.expander('出典'):
         ('https://www.e-stat.go.jp/stat-search/files?page=1&toukei=00450191&tstat=000001040259&file_type=1&result_page=1&metadata=1&data=1, 2026/2/2取得)')
 
-st.set_page_config(
-    layout="wide",                
-)
 
 st.subheader('サイドバーで地域、カテゴリーの選択をし、食中毒と地域ごとの発生回数を知り、比較することができるアプリです')
 st.subheader('食中毒の原因食品と発生地域の表')
