@@ -5,7 +5,7 @@ st.set_page_config(
     layout="wide",                
 )
 
-df = pd.read_csv("第1表.csv", header=[0,1],)
+df = pd.read_csv("file.csv", header=[0,1],)
 category = df.iloc[0].unique()
 
 st.header('食中毒の原因食品と地域ごとの比較')
