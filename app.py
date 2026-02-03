@@ -1,9 +1,8 @@
 import streamlit as st
-import pandas as pd
-
 st.set_page_config(
     layout="wide",                
 )
+import pandas as pd
 
 df = pd.read_csv("file.csv", header=[0,1],)
 category = df.iloc[0].unique()
